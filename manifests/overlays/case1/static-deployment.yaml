@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-server
+  namespace: static-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: static-server
+          livenessProbe:
+            initialDelaySeconds: 5

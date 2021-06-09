@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../reference-server
+patchesStrategicMerge:
+  - ingress.yaml
+namespace: static-server
+images:
+  - name: quay.io/cybozu/training-troubleshooting
+    newTag: 1.0.1

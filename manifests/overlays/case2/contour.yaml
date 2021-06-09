@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: envoy
+  namespace: projectcontour
+spec:
+  template:
+    spec:
+      containers:
+      - name: envoy
+        ports:
+          - port: 8080
+            $patch: delete
+          - containerPort: 8002
+            hostPort: 80
+            name: http
+            protocol: TCP
+          - containerPort: 8443
+            hostPort: 443
+            name: https
+            protocol: TCP

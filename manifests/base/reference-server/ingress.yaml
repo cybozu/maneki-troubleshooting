@@ -1,0 +1,16 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: static-server
+spec:
+  routes:
+    - conditions:
+        - prefix: /
+      timeoutPolicy:
+        response: 2m
+        idle: 5m
+      services:
+        - name: static-server
+          port: 8080
+  virtualhost:
+    fqdn: reference

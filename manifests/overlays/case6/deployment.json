@@ -1,0 +1,7 @@
+[
+    {
+        "op": "replace",
+        "path": "/spec/template/metadata/labels",
+        "value": {"app.kubenretes.io/name": "static-server"}
+    }
+]

@@ -1,0 +1,9 @@
+あなたは`static-server`というnamespaceにデプロイされているstaticサーバーの運用者です。
+このstaticサーバーを利用してstaticなファイルを提供しています。
+先ほどあなたは脆弱性対応のため、training-troubleshootingのDockerイメージ及びマニフェストを更新しました。
+本番適用後しばらくするとお客様から「"no healthy upstream" が返ってきているのでコンテンツにアクセスができない」と問い合わせが来始めました。
+正常であれば、curl -H "Host: static" $(whoami)/hoge.json を叩くとJSONファイルの中身が返ってくるはずです。
+1. ロールプレイ環境上で`curl -H "Host: static" $(whoami)/hoge.json`を叩き、確認してみましょう。
+2. 原因を調査し、障害復旧を行いましょう。
+
+正常なケースはいつでも `curl -H "Host: reference" $(whoami)/hoge.json` で確認できる。

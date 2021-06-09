@@ -1,0 +1,7 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: static-server
+spec:
+  virtualhost:
+    fqdn: static
